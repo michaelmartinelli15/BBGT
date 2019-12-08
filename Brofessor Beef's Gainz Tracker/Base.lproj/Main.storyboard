@@ -591,10 +591,10 @@
             </objects>
             <point key="canvasLocation" x="1509" y="360"/>
         </scene>
-        <!--View Controller-->
+        <!--Create New Exercise Controller-->
         <scene sceneID="SXt-tX-4os">
             <objects>
-                <viewController id="kRP-Nj-xQa" sceneMemberID="viewController">
+                <viewController id="kRP-Nj-xQa" customClass="CreateNewExerciseController" customModule="Brofessor_Beef_s_Gainz_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L98-5f-Lu3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -676,11 +676,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdr-95-nZJ">
+                                <rect key="frame" x="20" y="755" width="374" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="testButton:" destination="kRP-Nj-xQa" eventType="touchUpInside" id="ypg-2B-l9F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1138333902" green="0.17416989799999999" blue="0.3903104067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="9v4-CO-Dev"/>
                     </view>
                     <navigationItem key="navigationItem" id="YJp-pW-TPz"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="qri-ga-Aa1" id="YEu-Hr-Xgb"/>
+                        <outlet property="nameTextField" destination="8Xe-MH-ZTY" id="MqY-D7-9AH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCK-94-wuI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -30,5 +30,11 @@ class Brofessor_Beef_s_Gainz_TrackerTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    //MARK: exercise tests
+    
+    func testExerciseInitializer() {
+        let defaultExercise = Exercise.init(name: "Bench Press", reps: 5, sets: 5, startingWeight: 135, description: "Press the bar away from your chest")
+    }
 
 }
