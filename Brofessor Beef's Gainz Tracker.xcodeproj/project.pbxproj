@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0C034A47239C5AD000E816AB /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C034A46239C5AD000E816AB /* Exercise.swift */; };
 		0C034A49239C62AF00E816AB /* CreateNewExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C034A48239C62AF00E816AB /* CreateNewExerciseController.swift */; };
+		0C034A4B239C874800E816AB /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C034A4A239C874800E816AB /* Workout.swift */; };
+		0C034A4D239DBCEC00E816AB /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C034A4C239DBCEC00E816AB /* ExerciseTableViewCell.swift */; };
+		0C034A4F239DC0BF00E816AB /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C034A4E239DC0BF00E816AB /* ExerciseTableViewController.swift */; };
 		0C158636237CC95400D7FC9A /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C158635237CC95400D7FC9A /* ThirdViewController.swift */; };
 		0C9B5D02237B9E2D0045E978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B5D01237B9E2D0045E978 /* AppDelegate.swift */; };
 		0C9B5D04237B9E2D0045E978 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B5D03237B9E2D0045E978 /* SceneDelegate.swift */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		0C034A46239C5AD000E816AB /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		0C034A48239C62AF00E816AB /* CreateNewExerciseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewExerciseController.swift; sourceTree = "<group>"; };
+		0C034A4A239C874800E816AB /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		0C034A4C239DBCEC00E816AB /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		0C034A4E239DC0BF00E816AB /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
 		0C158635237CC95400D7FC9A /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		0C9B5CFE237B9E2D0045E978 /* Brofessor Beef's Gainz Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brofessor Beef's Gainz Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9B5D01237B9E2D0045E978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +99,9 @@
 				0C9B5D07237B9E2D0045E978 /* SecondViewController.swift */,
 				0C158635237CC95400D7FC9A /* ThirdViewController.swift */,
 				0C9B5D09237B9E2D0045E978 /* Main.storyboard */,
+				0C034A4E239DC0BF00E816AB /* ExerciseTableViewController.swift */,
+				0C034A4C239DBCEC00E816AB /* ExerciseTableViewCell.swift */,
+				0C034A4A239C874800E816AB /* Workout.swift */,
 				0C034A48239C62AF00E816AB /* CreateNewExerciseController.swift */,
 				0C034A46239C5AD000E816AB /* Exercise.swift */,
 				0C9B5D0C237B9E2D0045E978 /* Assets.xcassets */,
@@ -213,8 +222,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C034A49239C62AF00E816AB /* CreateNewExerciseController.swift in Sources */,
+				0C034A4F239DC0BF00E816AB /* ExerciseTableViewController.swift in Sources */,
 				0C9B5D08237B9E2D0045E978 /* SecondViewController.swift in Sources */,
 				0C9B5D06237B9E2D0045E978 /* FirstViewController.swift in Sources */,
+				0C034A4B239C874800E816AB /* Workout.swift in Sources */,
+				0C034A4D239DBCEC00E816AB /* ExerciseTableViewCell.swift in Sources */,
 				0C158636237CC95400D7FC9A /* ThirdViewController.swift in Sources */,
 				0C9B5D02237B9E2D0045E978 /* AppDelegate.swift in Sources */,
 				0C9B5D04237B9E2D0045E978 /* SceneDelegate.swift in Sources */,

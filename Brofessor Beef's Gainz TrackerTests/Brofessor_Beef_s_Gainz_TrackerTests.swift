@@ -34,7 +34,11 @@ class Brofessor_Beef_s_Gainz_TrackerTests: XCTestCase {
     //MARK: exercise tests
     
     func testExerciseInitializer() {
-        let defaultExercise = Exercise.init(name: "Bench Press", reps: 5, sets: 5, startingWeight: 135, description: "Press the bar away from your chest")
+        let noName = Exercise.init(name: "", reps: 5, sets: 5, startingWeight: 135, description: "Lift")
+        let invalidReps = Exercise.init(name: "reps", reps: -1, sets: 5, startingWeight: 135, description: "Lift")
+        let invalidSets = Exercise.init(name: "sets", reps: 5, sets: -1, startingWeight: 135, description: "Lift")
+        let invalidStartingWeight = Exercise.init(name: "weight", reps: 5, sets: 5, startingWeight: -5, description: "lift")
+        let noDescription = Exercise.init(name: "description", reps: 5, sets: 5, startingWeight: 135, description: "")
     }
 
 }

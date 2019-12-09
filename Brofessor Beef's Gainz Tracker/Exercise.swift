@@ -19,45 +19,31 @@ class Exercise {
     
     //MARK: Initialization
     
-    init(name: String, reps: Int, sets: Int, startingWeight: Int, description: String) {
-        if name.isEmpty{
-            self.name = "default exercise"
+    init?(name: String, reps: Int, sets: Int, startingWeight: Int, description: String) {
+        /*guard !name.isEmpty else {
+            return nil
         }
         
-        else {
-            self.name = name
+        guard !(reps <= 0) else {
+            return nil
         }
         
-        if reps < 1 {
-            self.reps = 5
+        guard !(sets <= 0) else {
+            return nil
         }
         
-        else {
-            self.reps = reps
+        guard !(startingWeight <= 0) else {
+            return nil
         }
         
-        if sets < 1 {
-            self.sets = 5
-        }
+        guard !description.isEmpty else {
+            return nil
+        }*/
         
-        else {
-            self.sets = sets
-        }
-        
-        if startingWeight < 1 {
-            self.startingWeight = 135
-        }
-        
-        else {
-            self.startingWeight = startingWeight
-        }
-        
-        if description.isEmpty {
-            self.description = "no description available"
-        }
-        
-        else {
-            self.description = description
-        }
+        self.name = name
+        self.reps = reps
+        self.sets = sets
+        self.startingWeight = startingWeight
+        self.description = description
     }
 }
