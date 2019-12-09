@@ -16,6 +16,7 @@ class ExerciseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
         loadSampleExercises()
     }
 
@@ -92,6 +93,19 @@ class ExerciseTableViewController: UITableViewController {
     }
     */
 
+    //MARK: Actions
+    @IBAction func unwindToExerciseList(sender: UIStoryboardSegue) {
+        
+        // maybe some issues here
+        if let sourceViewController = sender.source as? CreateNewExerciseController, let exercise = sourceViewController.exercise {
+            let newIndexPath = IndexPath(row: exercises.count, section: 0)
+            exercises.append(exercise)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+        }
+        
+    }
+    
     //MARK: Private Methods
     private func loadSampleExercises() {
                 
