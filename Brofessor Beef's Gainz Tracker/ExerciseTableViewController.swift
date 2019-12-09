@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import os.log
 
 class ExerciseTableViewController: UITableViewController {
     //MARK: Properties
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
     var exercises = [Exercise]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        //editButton = editButtonItem
         
-        loadSampleExercises()
+        //navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(addTapped))
+        
+        if let savedExercises = loadExercises() {
+            exercises += savedExercises
+        }
+        
+        else {
+            loadSampleExercises()
+        }
+                
     }
 
     // MARK: - Table view data source
@@ -48,25 +60,27 @@ class ExerciseTableViewController: UITableViewController {
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            exercises.remove(at: indexPath.row)
+            saveExercises()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -83,24 +97,61 @@ class ExerciseTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "Add Item":
+            os_log("Adding new Exercise", log: OSLog.default, type: .debug)
+        
+        case "Show Detail":
+            guard let exerciseDetailViewController = segue.destination as? CreateNewExerciseController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedExerciseCell = sender as? ExerciseTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedExerciseCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedExercise = exercises[indexPath.row]
+            exerciseDetailViewController.exercise = selectedExercise
+            
+        default:
+            fatalError("Unexpected Segue Identifier")
+        }
+        
+        
+        
+        
     }
-    */
+    
 
     //MARK: Actions
     @IBAction func unwindToExerciseList(sender: UIStoryboardSegue) {
         
         // maybe some issues here
         if let sourceViewController = sender.source as? CreateNewExerciseController, let exercise = sourceViewController.exercise {
-            let newIndexPath = IndexPath(row: exercises.count, section: 0)
-            exercises.append(exercise)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                exercises[selectedIndexPath.row] = exercise
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            
+            else {
+                let newIndexPath = IndexPath(row: exercises.count, section: 0)
+                exercises.append(exercise)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+            
+            saveExercises()
             
         }
         
@@ -122,5 +173,24 @@ class ExerciseTableViewController: UITableViewController {
         }
         
         exercises += [exercise1, exercise2, exercise3]
+    }
+    
+    private func saveExercises() {
+        // 'archiveRootObject(_:toFile:)' was deprecated in iOS 12.0: Use +archivedDataWithRootObject:requiringSecureCoding:error: instead
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(exercises, toFile: Exercise.ArchiveURL.path)
+        
+        if isSuccessfulSave {
+            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
+            os_log("reps: %d, sets: %d, starting weight: %d", exercises[0].reps, exercises[0].sets, exercises[0].startingWeight)
+        }
+        
+        else {
+            os_log("Failed to save meals...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadExercises() -> [Exercise]? {
+        
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Exercise.ArchiveURL.path) as? [Exercise]
     }
 }

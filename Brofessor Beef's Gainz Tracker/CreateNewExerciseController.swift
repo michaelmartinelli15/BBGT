@@ -17,6 +17,7 @@ class CreateNewExerciseController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var repsTextField: UITextField!
     @IBOutlet weak var startingWeightTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -34,7 +35,7 @@ class CreateNewExerciseController: UIViewController, UITextFieldDelegate {
     
         // called after textFieldShouldReturn
     func textFieldDidEndEditing(_ textField: UITextField) {
-        nameLabel.text = nameTextField.text
+        titleLabel.text = nameTextField.text
     }
     
     //MARK: Navigation
@@ -74,6 +75,15 @@ class CreateNewExerciseController: UIViewController, UITextFieldDelegate {
         repsTextField.delegate = self
         startingWeightTextField.delegate = self
         descriptionTextField.delegate = self
+        
+        if let exercise = exercise {
+            titleLabel.text = exercise.name
+            nameTextField.text = exercise.name
+            setsTextField.text = String(exercise.sets)
+            repsTextField.text = String(exercise.reps)
+            startingWeightTextField.text = String(exercise.startingWeight)
+            descriptionTextField.text = exercise.exDescription
+        }
     }
 
 
