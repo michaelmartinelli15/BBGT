@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import os.log
 @testable import Brofessor_Beef_s_Gainz_Tracker
 
 class Brofessor_Beef_s_Gainz_TrackerTests: XCTestCase {
@@ -39,6 +40,31 @@ class Brofessor_Beef_s_Gainz_TrackerTests: XCTestCase {
         let invalidSets = Exercise.init(name: "sets", reps: 5, sets: -1, startingWeight: 135, description: "Lift")
         let invalidStartingWeight = Exercise.init(name: "weight", reps: 5, sets: 5, startingWeight: -5, description: "lift")
         let noDescription = Exercise.init(name: "description", reps: 5, sets: 5, startingWeight: 135, description: "")
+    }
+    
+    func testWorkoutInitializer() {
+        var exercises = [Exercise]()
+        
+        guard let benchPress = Exercise(name: "Bench Press", reps: 5, sets: 5, startingWeight: 235, description: "Press the bar") else {
+            return ()
+        }
+        guard let squat = Exercise(name: "Squat", reps: 12, sets: 3, startingWeight: 185, description: "Squat the bar") else {
+            return ()
+        }
+        
+        exercises.append(benchPress)
+        exercises.append(squat)
+        
+        for exercise in exercises {
+            os_log("Exercise: %s", exercise.name)
+        }
+        
+        let workout = Workout(exercises: exercises, name: "Test Workout")
+        
+        for exercise in workout!.exercises {
+            os_log("%s: %s", workout!.name, exercise.name)
+        }
+        
     }
 
 }

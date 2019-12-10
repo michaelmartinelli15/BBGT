@@ -59,6 +59,18 @@ class ExerciseTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newWorkoutController = Storyboard.instantiateViewController(identifier: "NewWorkoutViewController") as! NewWorkoutViewController
+        
+        let exercise = exercises[indexPath.row]
+       // os_log("workout name: %s", newWorkoutController.workouts[0].name)
+        
+        let newWorkout = Workout(exercises: [exercise], name: "New Workout")!
+        
+        newWorkoutController.workouts.append(newWorkout)
+        newWorkoutController.workouts[0].exercises.append(exercise)
+    }
 
     
     // Override to support conditional editing of the table view.
@@ -153,6 +165,11 @@ class ExerciseTableViewController: UITableViewController {
             
             saveExercises()
             
+        }
+        
+        if let sourceViewController = sender.source as? NewWorkoutViewController {
+            //sourceViewController.workouts[0].exercises.ap
+            os_log("in new workout view Controller")
         }
         
     }

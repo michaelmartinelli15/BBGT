@@ -1,18 +1,18 @@
 //
-//  ExerciseTableViewCell.swift
+//  WorkoutTableViewCell.swift
 //  Brofessor Beef's Gainz Tracker
 //
-//  Created by Michael Martinelli on 12/8/19.
+//  Created by Michael Martinelli on 12/9/19.
 //  Copyright © 2019 Michael Martinelli. All rights reserved.
 //
 
 import UIKit
 
-class ExerciseTableViewCell: UITableViewCell {
+class WorkoutTableViewCell: UITableViewCell {
+
     //MARK: Properties
     
-    @IBOutlet weak var exerciseNameLabel: UILabel!
-    @IBOutlet weak var workoutExerciseNameLabel: UILabel!
+    @IBOutlet weak var workoutNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -21,6 +21,12 @@
 		0C9B5D10237B9E2D0045E978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B5D0E237B9E2D0045E978 /* LaunchScreen.storyboard */; };
 		0C9B5D1B237B9E2D0045E978 /* Brofessor_Beef_s_Gainz_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B5D1A237B9E2D0045E978 /* Brofessor_Beef_s_Gainz_TrackerTests.swift */; };
 		0C9B67FF237D2051004EC818 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B5D0C237B9E2D0045E978 /* Assets.xcassets */; };
+		0CD75616239ED1CB0001B05C /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD75615239ED1CB0001B05C /* WorkoutTableViewCell.swift */; };
+		0CD75618239ED4140001B05C /* WorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD75617239ED4140001B05C /* WorkoutTableViewController.swift */; };
+		0CD7561A239EE41F0001B05C /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD75619239EE41F0001B05C /* NewWorkoutViewController.swift */; };
+		0CD7561C239EE7180001B05C /* ExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7561B239EE7180001B05C /* ExerciseList.swift */; };
+		0CD7561E239F19F80001B05C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7561D239F19F80001B05C /* MainViewController.swift */; };
+		0CD75622239F38C80001B05C /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD75621239F38C80001B05C /* ExampleTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,12 @@
 		0C9B5D16237B9E2D0045E978 /* Brofessor Beef's Gainz TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brofessor Beef's Gainz TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9B5D1A237B9E2D0045E978 /* Brofessor_Beef_s_Gainz_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brofessor_Beef_s_Gainz_TrackerTests.swift; sourceTree = "<group>"; };
 		0C9B5D1C237B9E2D0045E978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CD75615239ED1CB0001B05C /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		0CD75617239ED4140001B05C /* WorkoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewController.swift; sourceTree = "<group>"; };
+		0CD75619239EE41F0001B05C /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
+		0CD7561B239EE7180001B05C /* ExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseList.swift; sourceTree = "<group>"; };
+		0CD7561D239F19F80001B05C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0CD75621239F38C80001B05C /* ExampleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +87,7 @@
 		0C9B5CF5237B9E2D0045E978 = {
 			isa = PBXGroup;
 			children = (
+				0CD75621239F38C80001B05C /* ExampleTableViewController.swift */,
 				0C9B5D00237B9E2D0045E978 /* Brofessor Beef's Gainz Tracker */,
 				0C9B5D19237B9E2D0045E978 /* Brofessor Beef's Gainz TrackerTests */,
 				0C9B5CFF237B9E2D0045E978 /* Products */,
@@ -99,6 +112,11 @@
 				0C9B5D07237B9E2D0045E978 /* SecondViewController.swift */,
 				0C158635237CC95400D7FC9A /* ThirdViewController.swift */,
 				0C9B5D09237B9E2D0045E978 /* Main.storyboard */,
+				0CD7561D239F19F80001B05C /* MainViewController.swift */,
+				0CD7561B239EE7180001B05C /* ExerciseList.swift */,
+				0CD75619239EE41F0001B05C /* NewWorkoutViewController.swift */,
+				0CD75615239ED1CB0001B05C /* WorkoutTableViewCell.swift */,
+				0CD75617239ED4140001B05C /* WorkoutTableViewController.swift */,
 				0C034A4E239DC0BF00E816AB /* ExerciseTableViewController.swift */,
 				0C034A4C239DBCEC00E816AB /* ExerciseTableViewCell.swift */,
 				0C034A4A239C874800E816AB /* Workout.swift */,
@@ -223,11 +241,17 @@
 			files = (
 				0C034A49239C62AF00E816AB /* CreateNewExerciseController.swift in Sources */,
 				0C034A4F239DC0BF00E816AB /* ExerciseTableViewController.swift in Sources */,
+				0CD75618239ED4140001B05C /* WorkoutTableViewController.swift in Sources */,
+				0CD7561C239EE7180001B05C /* ExerciseList.swift in Sources */,
+				0CD7561A239EE41F0001B05C /* NewWorkoutViewController.swift in Sources */,
 				0C9B5D08237B9E2D0045E978 /* SecondViewController.swift in Sources */,
 				0C9B5D06237B9E2D0045E978 /* FirstViewController.swift in Sources */,
+				0CD75616239ED1CB0001B05C /* WorkoutTableViewCell.swift in Sources */,
 				0C034A4B239C874800E816AB /* Workout.swift in Sources */,
+				0CD7561E239F19F80001B05C /* MainViewController.swift in Sources */,
 				0C034A4D239DBCEC00E816AB /* ExerciseTableViewCell.swift in Sources */,
 				0C158636237CC95400D7FC9A /* ThirdViewController.swift in Sources */,
+				0CD75622239F38C80001B05C /* ExampleTableViewController.swift in Sources */,
 				0C9B5D02237B9E2D0045E978 /* AppDelegate.swift in Sources */,
 				0C9B5D04237B9E2D0045E978 /* SceneDelegate.swift in Sources */,
 				0C034A47239C5AD000E816AB /* Exercise.swift in Sources */,
