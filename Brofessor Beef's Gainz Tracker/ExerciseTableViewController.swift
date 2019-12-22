@@ -9,6 +9,8 @@
 import UIKit
 import os.log
 
+// view controller for exercises scene
+
 class ExerciseTableViewController: UITableViewController {
     //MARK: Properties
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -148,9 +150,10 @@ class ExerciseTableViewController: UITableViewController {
     
 
     //MARK: Actions
+    
+    // adds a new exercise to the table of exercises and saves
     @IBAction func unwindToExerciseList(sender: UIStoryboardSegue) {
         
-        // maybe some issues here
         if let sourceViewController = sender.source as? CreateNewExerciseController, let exercise = sourceViewController.exercise {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 exercises[selectedIndexPath.row] = exercise
@@ -175,6 +178,8 @@ class ExerciseTableViewController: UITableViewController {
     }
     
     //MARK: Private Methods
+    
+    // loads preset sample exercises
     private func loadSampleExercises() {
                 
         guard let exercise1 = Exercise(name: "Bench Press", reps: 5, sets: 5, startingWeight: 135, description: "While laying flat on the bench, press the bar up away from your body") else {
@@ -192,6 +197,7 @@ class ExerciseTableViewController: UITableViewController {
         exercises += [exercise1, exercise2, exercise3]
     }
     
+    // saves exercises
     private func saveExercises() {
         // 'archiveRootObject(_:toFile:)' was deprecated in iOS 12.0: Use +archivedDataWithRootObject:requiringSecureCoding:error: instead
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(exercises, toFile: Exercise.ArchiveURL.path)
@@ -206,6 +212,7 @@ class ExerciseTableViewController: UITableViewController {
         }
     }
     
+    // loads previously saved exercises
     private func loadExercises() -> [Exercise]? {
         
         return NSKeyedUnarchiver.unarchiveObject(withFile: Exercise.ArchiveURL.path) as? [Exercise]

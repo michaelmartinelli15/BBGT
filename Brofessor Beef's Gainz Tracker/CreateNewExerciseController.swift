@@ -9,6 +9,8 @@
 import UIKit
 import os.log
 
+// view controller for creating new exercises
+
 class CreateNewExerciseController: UIViewController, UITextFieldDelegate {
 
     //MARK: Properties
@@ -62,11 +64,12 @@ class CreateNewExerciseController: UIViewController, UITextFieldDelegate {
     
     //MARK: Actions
     
-    
+    // test function
     @IBAction func testButton(_ sender: UIButton) {
         nameLabel.text = "default Text"
     }
     
+    // initializes appropriate values to be loaded to the screen
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

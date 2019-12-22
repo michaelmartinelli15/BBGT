@@ -9,6 +9,8 @@
 import UIKit
 import os.log
 
+// workout data structure
+
 class Workout {
     
     //MARK: Properties

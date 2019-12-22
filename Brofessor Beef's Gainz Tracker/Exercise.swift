@@ -9,6 +9,8 @@
 import UIKit
 import os.log
 
+// exercise data structure
+
 class Exercise : NSObject, NSCoding {
     
     //MARK: Properties

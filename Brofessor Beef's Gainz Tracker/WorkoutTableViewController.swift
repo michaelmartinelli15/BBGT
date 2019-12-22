@@ -9,6 +9,8 @@
 import UIKit
 import os.log
 
+// view controller for workouts scene
+
 class WorkoutTableViewController: UITableViewController {
     
     //MARK: Properties
@@ -28,16 +30,20 @@ class WorkoutTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    
+    // these three functions manage the table in this scene
+    
+    // provides the table with the number of sections in the table. We only have one
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
+    // returns the number of rows needed in the table. This corresponds to the number of exercises in a workout
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return workouts.count
     }
 
-    
+    // sets the cell to the appropriate information
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "WorkoutTableViewCell"
         
@@ -110,6 +116,7 @@ class WorkoutTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
+    // loads preset sample exercises
     private func loadSampleWorkouts() {
         guard let benchPress = Exercise(name: "Bench Press", reps: 5, sets: 5, startingWeight: 235, description: "Press the bar") else {
             return ()

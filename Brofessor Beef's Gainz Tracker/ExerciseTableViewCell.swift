@@ -8,6 +8,8 @@
 
 import UIKit
 
+// exercise cell
+
 class ExerciseTableViewCell: UITableViewCell {
     //MARK: Properties
     

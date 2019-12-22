@@ -9,6 +9,8 @@
 import UIKit
 import os.log
 
+// View Controller for the main workout tab
+
 class MainViewController: UIViewController {
     //MARK: Properties
     
@@ -37,7 +39,7 @@ class MainViewController: UIViewController {
         
     }
     
-    
+    // initializes the view
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,10 +69,12 @@ class MainViewController: UIViewController {
     */
     
     //MARK: Actions
+    // manages the stepper button
     @IBAction func clicker(_ sender: UIStepper) {
         currentWeightLabel.text = "\(Int(stepper.value))"
     }
     
+    // manages forward navigation through a workout
     @IBAction func nextExercise(_ sender: UIButton) {
         if index < workout?.exercises.count ?? 0 {
             index += 1
@@ -79,6 +83,7 @@ class MainViewController: UIViewController {
         }
     }
     
+    // manages backward navigation through a workout
     @IBAction func prevExercise(_ sender: UIButton) {
         if index > 0 {
             index -= 1

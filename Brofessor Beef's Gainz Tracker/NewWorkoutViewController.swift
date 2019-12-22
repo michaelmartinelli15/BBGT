@@ -9,6 +9,8 @@
 import UIKit
 import os.log
 
+// view controller for new workout scene
+
 class NewWorkoutViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //MARK: Properties
@@ -29,11 +31,12 @@ class NewWorkoutViewController: UIViewController, UITableViewDataSource, UITable
        
     }*/
     
-    
+    // calls parent class initializer
     required init?(coder aDecoder: NSCoder) {
          super.init(coder: aDecoder)
     }
     
+    // loads screen and sample date
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,14 +66,19 @@ class NewWorkoutViewController: UIViewController, UITableViewDataSource, UITable
     
     //MARK: Data Source
     
+    // these three functions manage the table in this scene
+    
+    // provides the table with the number of sections in the table. We only have one
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // returns the number of rows needed in the table. This corresponds to the number of exercises in a workout
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return workouts[0].exercises.count
     }
     
+    // sets the cell to the appropriate information
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "ExerciseTableViewCell"
         
@@ -88,6 +96,7 @@ class NewWorkoutViewController: UIViewController, UITableViewDataSource, UITable
     
     //MARK: Private Methods
     
+    // loads preset sample exercises
     private func loadSampleExercises() {
         guard let exercise1 = Exercise(name: "Bench Press", reps: 5, sets: 5, startingWeight: 135, description: "While laying flat on the bench, press the bar up away from your body") else {
             fatalError("unable to instantiate Exercise1")

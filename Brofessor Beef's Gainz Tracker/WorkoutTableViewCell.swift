@@ -8,6 +8,8 @@
 
 import UIKit
 
+// cell for workout table, only has a label
+
 class WorkoutTableViewCell: UITableViewCell {
 
     //MARK: Properties
